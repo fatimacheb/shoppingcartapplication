@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cart With Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Quantity</th>
+      <th>User</th>
+      <th>Cart</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cart_with_items.each do |cart_with_item| %>
+      <tr>
+        <td><%= cart_with_item.quantity %></td>
+        <td><%= cart_with_item.user %></td>
+        <td><%= cart_with_item.cart %></td>
+        <td><%= link_to 'Show', cart_with_item %></td>
+        <td><%= link_to 'Edit', edit_cart_with_item_path(cart_with_item) %></td>
+        <td><%= link_to 'Destroy', cart_with_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cart with item', new_cart_with_item_path %>

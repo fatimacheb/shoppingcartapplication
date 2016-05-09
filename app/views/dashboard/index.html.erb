@@ -1,0 +1,16 @@
+<h1> welcome to your dashboard </h1>
+
+<%= form_tag do |f| %>
+ <% if current_user %>
+		<% if current_user.email == "admin_fatima@mycompany.com" %>
+		        <td><%= link_to "Add Items", new_item_path %></td>
+		        <td><%= link_to "Edit Items", items_path %></td>
+		        <td><%= link_to "See orders", orders_path %></td>
+		          <% else %>
+		          <td><%= link_to "Start shopping", items_path %>
+		          	<td><%= link_to "See your orders", orders_path %>
+		          
+
+		  <% end %>
+   <% end %>
+<% end %>
